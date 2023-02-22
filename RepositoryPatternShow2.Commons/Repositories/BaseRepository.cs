@@ -22,7 +22,7 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id)
+    public virtual async Task DeleteAsync(Guid id)
     {
         TEntity entity = await _dbSet.FindAsync(id);
 
