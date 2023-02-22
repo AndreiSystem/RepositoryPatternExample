@@ -1,14 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore;
-using RepositoryPatternShow2.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using RepositoryPatternShow2.Commons.Context;
+using RepositoryPatternShow2.Domain;
+using System.Linq.Expressions;
 
 namespace RepositoryPatternShow2.Commons.Repositories;
 
@@ -35,12 +28,11 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
 
         if (filter != null)
         {
-
             query = query
                 .Where(filter)
                 .AsNoTracking();
         }
-        
+
         return await query.ToListAsync();
     }
 

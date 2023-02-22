@@ -12,7 +12,7 @@ using RepositoryPatternShow2.Commons.Context;
 namespace RepositoryPatternShow2.Commons.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230215174737_Init")]
+    [Migration("20230222003012_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -39,7 +39,7 @@ namespace RepositoryPatternShow2.Commons.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("Cliente", (string)null);
                 });
 
             modelBuilder.Entity("RepositoryPatternShow2.Domain.Produto", b =>
@@ -56,7 +56,7 @@ namespace RepositoryPatternShow2.Commons.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Produtos");
+                    b.ToTable("Produto", (string)null);
                 });
 #pragma warning restore 612, 618
         }

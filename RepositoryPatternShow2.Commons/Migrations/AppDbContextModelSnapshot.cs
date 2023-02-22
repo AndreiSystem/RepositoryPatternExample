@@ -36,7 +36,7 @@ namespace RepositoryPatternShow2.Commons.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("Cliente", (string)null);
                 });
 
             modelBuilder.Entity("RepositoryPatternShow2.Domain.Produto", b =>
@@ -53,7 +53,7 @@ namespace RepositoryPatternShow2.Commons.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Produtos");
+                    b.ToTable("Produto", (string)null);
                 });
 #pragma warning restore 612, 618
         }

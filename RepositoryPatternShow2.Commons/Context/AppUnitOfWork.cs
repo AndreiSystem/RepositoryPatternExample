@@ -2,7 +2,7 @@
 
 public class AppUnitOfWork : ContextDatabase<AppDbContext>
 {
-	public AppUnitOfWork(AppDbContext dbContext) : base(dbContext)
-	{
-	} 
+    public AppUnitOfWork(AppDbContext dbContext) : base(dbContext)
+    {
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RepositoryPatternShow2.Commons.Context;
+using RepositoryPatternShow2.Commons.Repositories;
 
 namespace RepositoryPatternShow2.Commons;
 
@@ -9,6 +10,11 @@ public static class CommonsInjectionExtensions
     public static void AddCommons(this IServiceCollection services)
     {
         services.AddPostgres<AppDbContext, AppUnitOfWork>();
+    }
+
+    public static void AddRepositories(this IServiceCollection services)
+    {
+        services.AddScoped<IProdutoRepository, ProdutoRepository>();
     }
 
     private static void AddPostgres<TDbContext, TUnitOfWork>(this IServiceCollection services,

@@ -10,6 +10,7 @@ namespace RepositoryPatternShow2
 
             // Add services to the container.
             builder.Services.AddCommons();
+            builder.Services.AddRepositories();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
