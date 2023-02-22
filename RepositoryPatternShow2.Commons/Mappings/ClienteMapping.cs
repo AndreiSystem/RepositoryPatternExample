@@ -6,7 +6,7 @@ namespace RepositoryPatternShow2.Commons.Mappings;
 
 public class ClienteMapping : IEntityTypeConfiguration<Cliente>
 {
-    public void Configure(EntityTypeBuilder<Cliente> builder) 
+    public void Configure(EntityTypeBuilder<Cliente> builder)
     {
         builder.ToTable(nameof(Cliente));
 

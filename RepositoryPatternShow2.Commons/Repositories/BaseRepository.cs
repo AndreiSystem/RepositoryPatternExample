@@ -28,7 +28,7 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
 
         if (entity is not null)
             _dbSet.Remove(entity);
-        
+
         await _dbContext.SaveChangesAsync();
     }
 
