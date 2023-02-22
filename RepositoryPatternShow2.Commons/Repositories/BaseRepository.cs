@@ -22,6 +22,16 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
         await _dbContext.SaveChangesAsync();
     }
 
+    public async Task DeleteAsync(Guid id)
+    {
+        TEntity entity = await _dbSet.FindAsync(id);
+
+        if (entity is not null)
+            _dbSet.Remove(entity);
+        
+        await _dbContext.SaveChangesAsync();
+    }
+
     public virtual async Task<IEnumerable<TEntity>> ObterAsync(Expression<Func<TEntity, bool>>? filter = null)
     {
         var query = _dbSet.AsQueryable();

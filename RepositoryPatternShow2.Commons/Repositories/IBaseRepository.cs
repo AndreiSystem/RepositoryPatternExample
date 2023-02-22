@@ -8,4 +8,5 @@ public interface IBaseRepository<TEntity> where TEntity : Base
     Task AddAsync(TEntity entity);
     Task<IEnumerable<TEntity>> ObterAsync(Expression<Func<TEntity, bool>>? filter);
     Task<TEntity> ObterPorIdAsync(Guid id);
+    Task DeleteAsync(Guid id);
 }
