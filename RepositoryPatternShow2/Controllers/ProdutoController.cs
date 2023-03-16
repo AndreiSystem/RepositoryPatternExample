@@ -15,7 +15,7 @@ public class ProdutoController : ControllerBase
 		_produtoRepository = produtoRepository;
 	}
 
-	[HttpPost]
+	[HttpPost(nameof(AdicionarProduto)]
 	public async Task<IActionResult> AdicionarProduto()
 	{
 		var produto = new Produto(Guid.NewGuid(), "Produto 1", 1);
